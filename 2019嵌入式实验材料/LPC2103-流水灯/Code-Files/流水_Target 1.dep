@@ -1,0 +1,5 @@
+Dependencies for Project 'Á÷Ë®', Target 'Target 1': (DO NOT MODIFY !)
+F (.\Startup.s)(0x4BB19EDE)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1" -I "C:\Keil\ARM\INC" -I "C:\Keil\ARM\INC\Philips" --list "Startup.lst" --xref -o "Startup.o" --depend "Startup.d")
+F (.\liushui.c)(0x532BA73D)(-c --cpu ARM7TDMI -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I "C:\Keil\ARM\INC" -I "C:\Keil\ARM\INC\Philips" -o "liushui.o" --omf_browse "liushui.crf" --depend "liushui.d")
+I (C:\Keil\ARM\INC\Philips\LPC2103.H)(0x4BB19FA0)
+I (firmware.h)(0x514F0C00)
