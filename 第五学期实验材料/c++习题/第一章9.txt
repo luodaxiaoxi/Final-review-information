@@ -1,0 +1,31 @@
+
+#include <iostream>
+using namespace std;
+template<typename T>
+T sort(T &x,T &y,T &z)
+{
+	T temp;
+	T a[3] = { x,y,z };
+	int len=3, i, j;
+	for (i = 0; i < len - 1; i++)
+		for (j = 0; j < len - 1 - i; j++)
+		{
+			if (a[j] > a[j + 1])
+			{
+				temp = a[j]; a[j] = a[j + 1]; a[j + 1] = temp;
+			}
+		}
+	cout << "排序为：" << endl;
+	cout << a[0]<<" " << a[1] <<" "<< a[2]<<endl;
+	return 0;
+}
+int main()
+{
+	int x,y,z;
+	//float x, y, z;
+	cout << "请输入三个数：" << endl;
+	cin >> x >> y >> z;
+	sort(x,y,z);
+	system("pause");
+	return 0;
+}

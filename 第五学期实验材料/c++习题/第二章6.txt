@@ -1,0 +1,39 @@
+
+#include <iostream>
+using namespace std;
+
+class Cylinder
+{
+public:
+	float length, width, heigth;
+	float Input();
+	float Volume();
+	float ShowVolume();
+};
+float Cylinder::Input(void)
+{
+	cin >> length >> width >> heigth;
+	return 0;
+}
+float Cylinder::Volume()
+{
+	return length * width*heigth;
+}
+float Cylinder::ShowVolume(void)
+{
+	cout << length * width*heigth << endl;
+	return 0;
+}
+
+int main()
+{ 
+	Cylinder cy1, cy2, cy3;
+	cout << "分别输入三个长方柱体的长宽高,每个输入结束以回车结尾：" << endl;
+	cy1.Input(); cy2.Input(); cy3.Input();
+	cout << "三个柱体的体积分别为："<<endl;
+	cy1.ShowVolume();
+	cy2.ShowVolume();
+	cy3.ShowVolume();
+	system("pause");
+	return 0;
+}

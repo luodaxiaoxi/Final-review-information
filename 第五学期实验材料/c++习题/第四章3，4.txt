@@ -1,0 +1,113 @@
+#include <iostream>
+using namespace std;
+
+class Complex
+{
+private:
+	float real;
+	float imag;
+public:
+	Complex() { real = 0; imag = 0; }
+	Complex(float r, float i) { real = r; imag = i; }     //构造函数
+	void show() { cout << real << "+" << imag << "j" << endl; }
+	friend Complex operator+(Complex &c1,Complex &c2);		//友元函数
+	friend Complex operator+(int &i, Complex &c);
+	friend Complex operator+(Complex &c, int &i);
+};
+Complex operator+(int &i, Complex &c)
+{
+	return Complex(c.real + i, c.imag);
+}
+Complex operator+( Complex &c,int &i )
+{
+	return Complex(c.real + i, c.imag);
+}
+Complex operator+(Complex &c1, Complex &c2)
+{
+	return Complex(c1.real + c2.real, c1.imag + c2.imag);
+}
+void main()
+{
+	Complex c(5, 6), c1(1, 1),c2,c3,c4;
+	int i = 5;
+	c2 = c + i;
+	c3 = i + c; c4 = c + c1;
+	c2.show();
+}
+
+
+
+
+
+
+
+4.         
+
+#include<iostream>
+#include<iomanip>
+using namespace std;
+class Complex
+{
+    private:
+        int i,j,n,a[2][3];
+    public:
+        Complex();
+        Complex operator+(Complex &c);
+        void display();
+        void input();
+} t1;
+
+
+Complex::Complex()
+ {
+ for(int i=0;i<2;i++)
+ for(int j=0;j<3;j++)
+ a[i][j]=0;
+ } 
+
+
+ void Complex::input()
+ {
+    for(i=0;i<2;i++)
+     for(j=0;j<3;j++)
+     cin>>a[i][j];
+ } 
+ void Complex::display()
+ {
+    n=1;
+    for(i=0;i<2;i++)
+      for(j=0;j<3;j++)
+      {
+        n++;
+        if(n%2==0)
+        cout<<endl;
+        cout<<setw(5)<<a[i][j];
+      }
+      cout<<endl; 
+ }
+Complex Complex::operator+(Complex &c)
+{
+    for(int i=0;i<2;i++) 
+     for(int j=0;j<3;j++) 
+    t1.a[i][j]=a[i][j]+c.a[i][j];
+    return t1; 
+}
+
+int main()
+{
+    Complex t2,t3,t4;
+    cout<<"请输入2*3个整数"<<endl; 
+    t2.input();
+    cout<<endl;
+    cout<<"请输入2*3个整数"<<endl; 
+    t3.input();
+    cout<<endl;
+    cout<<"t2";
+    t2.display();
+    cout<<"t3";
+    t3.display();
+    t4=t2+t3;
+    cout<<"t4=t2+t3=";
+    t4.display();
+    return 0;
+} 
